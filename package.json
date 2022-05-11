@@ -1,6 +1,6 @@
 {
   "name": "react-native-critizr",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "React Native wrapper for Critizr",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
