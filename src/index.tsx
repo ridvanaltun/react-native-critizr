@@ -36,6 +36,7 @@ interface FeedbackParams {
   mode?: FeedbackModes;
   placeId?: String | null;
   closable?: boolean;
+  tag?: string;
 }
 
 export default {
@@ -73,7 +74,8 @@ export default {
     const closable = params?.hasOwnProperty('closable')
       ? params.closable
       : true;
-    Critizr.openFeedbackDisplay(mode, closable, placeId);
+    const tag = params?.hasOwnProperty('tag') ? params.tag : null;
+    Critizr.openFeedbackDisplay(mode, closable, placeId, tag);
   },
   openStoreDisplay: (placeId: String) => {
     Critizr.openStoreDisplay(placeId);

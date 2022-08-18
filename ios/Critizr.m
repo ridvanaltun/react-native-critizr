@@ -102,7 +102,8 @@ RCT_REMAP_METHOD(setUser,
 RCT_REMAP_METHOD(openFeedbackDisplay,
                  withMode:(NSString*)mode
                  withClosable:(BOOL*)closable
-                 withPlaceId:(NSString*)placeId)
+                 withPlaceId:(NSString*)placeId
+                 withTag:(NSString*)tag)
 {
     CRFeedbackDialog *feedbackDialog = [CRFeedbackDialog feedbackDialog];
 
@@ -113,6 +114,8 @@ RCT_REMAP_METHOD(openFeedbackDisplay,
     params[@"lang"] = language;
 
     if(user) params[@"user"] = user;
+
+    if(tag) params[@"tag"] = tag;
 
     UIViewController *topViewController = RCTPresentedViewController();
 

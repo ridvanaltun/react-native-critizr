@@ -111,7 +111,7 @@ public class CritizrModule extends ReactContextBaseJavaModule implements Critizr
      * This activity is linked to a CritizrListener, which will listen for related events.
     **/
     @ReactMethod
-    public void openFeedbackDisplay(String mode, Boolean closable, String placeId) {
+    public void openFeedbackDisplay(String mode, Boolean closable, String placeId, @Nullable String tag) {
       JSONObject object = new JSONObject();
 
       try {
@@ -120,6 +120,8 @@ public class CritizrModule extends ReactContextBaseJavaModule implements Critizr
         object.put("lang", this.language);
 
         if(this.user != null) object.put("user", this.user);
+
+        if(tag != null) object.put("tag", tag);
 
       } catch (JSONException e) {
         e.printStackTrace();
